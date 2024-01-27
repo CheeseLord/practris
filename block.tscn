@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bd3qixgbg1lsi"]
+
+[ext_resource type="Texture2D" uid="uid://cuellax1vqx4v" path="res://assets/block_bw.png" id="1_5plxx"]
+
+[node name="Block" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 0, 0, 1)
+texture = ExtResource("1_5plxx")
