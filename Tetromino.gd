@@ -25,7 +25,6 @@ func _ready():
 				var block = block_scene.instantiate()
 				var block_size = block.get_size()
 				block.position = Vector2(c * block_size.x, r * block_size.y)
-				print(block.position)
 				blocks.append(block)
 				add_child(block)
  

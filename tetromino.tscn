@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://3wivvpomgnn5"]
+[gd_scene load_steps=3 format=3 uid="uid://25aqyp7kjxck"]
 
 [ext_resource type="Script" path="res://Tetromino.gd" id="1_t1fp1"]
-[ext_resource type="PackedScene" uid="uid://c1s0bl2jt6a85" path="res://block.tscn" id="2_3l1qj"]
+[ext_resource type="PackedScene" uid="uid://81jroa3ixb6x" path="res://block.tscn" id="2_3l1qj"]
 
 [node name="Tetromino" type="Node2D"]
 script = ExtResource("1_t1fp1")
