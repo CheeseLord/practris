@@ -31,17 +31,20 @@ func _ready():
 	update_block_positions()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	if Input.is_action_pressed("rotate"):
+func _process(_delta):
+	pass
+
+func _input(event):
+	if event.is_action_pressed("rotate"):
 		rotate_blocks()
 
 func rotate_blocks():
-	# Let's rotate the boards.
+	# Let's rotate the board.
 	var new_blocks = []
-	for anti_c in range(blocks[0].size()):
+	for c in range(blocks[0].size()):
 		var new_row = []
-		for r in range(blocks.size()):
-			new_row.append(blocks[r][-anti_c - 1])
+		for anti_r in range(blocks.size()):
+			new_row.append(blocks[-anti_r - 1][c])
 		new_blocks.append(new_row)
 	blocks = new_blocks
 	update_block_positions()
