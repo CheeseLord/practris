@@ -43,9 +43,8 @@ func rotate_blocks():
 		var new_row = []
 		for r in range(blocks.size()):
 			new_row.append(blocks[r][-anti_c - 1])
-		new_blocks.append(new_blocks)
+		new_blocks.append(new_row)
 	blocks = new_blocks
-	print(blocks)
 	update_block_positions()
 
 func update_block_positions():
