@@ -1,9 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://bd3qixgbg1lsi"]
+[gd_scene load_steps=4 format=3 uid="uid://c1s0bl2jt6a85"]
 
-[ext_resource type="Texture2D" uid="uid://cuellax1vqx4v" path="res://assets/block_bw.png" id="1_5plxx"]
+[ext_resource type="Texture2D" uid="uid://ceu4qd8u8143c" path="res://assets/block_bw.png" id="1_5plxx"]
+[ext_resource type="Script" path="res://block.gd" id="1_rqumr"]
 
-[node name="Block" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xdb77"]
+size = Vector2(64, 64)
+
+[node name="Block" type="Area2D"]
+script = ExtResource("1_rqumr")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(1, 0, 0, 1)
 texture = ExtResource("1_5plxx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_xdb77")
