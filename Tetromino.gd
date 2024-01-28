@@ -34,6 +34,7 @@ func _ready():
 func _process(_delta):
 	pass
 
+# Called when an event is received (such as a keypress).
 func _input(event):
 	if event.is_action_pressed("rotate"):
 		rotate_blocks()
