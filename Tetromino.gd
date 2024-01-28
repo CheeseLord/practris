@@ -13,22 +13,31 @@ const ALL_TILES = [
 	[[1, 1, 0], [0, 1, 1], [0, 0, 0]],  # Z
 ]
 
-var tile
 var blocks = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	tile = ALL_TILES[randi() % ALL_TILES.size()].duplicate(true)
+	var tile = ALL_TILES[randi() % ALL_TILES.size()]
 	for r in range(tile.size()):
+		var block_row = []
 		for c in range(tile[r].size()):
 			if tile[r][c]:
 				var block = block_scene.instantiate()
+				add_child(block)
+				block_row.append(block)
+			else:
+				block_row.append(null)
+		blocks.append(block_row)
+	update_block_positions()
+
+func update_block_positions():
+	for r in range(blocks.size()):
+		for c in range(blocks[r].size()):
+			var block = blocks[r][c]
+			if block:
 				var block_size = block.get_size()
 				block.position = Vector2(c * block_size.x, r * block_size.y)
-				blocks.append(block)
-				add_child(block)
- 
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
-
