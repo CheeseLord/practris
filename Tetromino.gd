@@ -36,8 +36,7 @@ func _process(delta):
 		rotate_blocks()
 
 func rotate_blocks():
-	# It's time to rotate the board
-	print("hello?")
+	# Let's rotate the boards.
 	var new_blocks = []
 	for anti_c in range(blocks[0].size()):
 		var new_row = []
