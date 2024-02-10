@@ -13,16 +13,29 @@ const ALL_TILES = [
 	[[1, 1, 0], [0, 1, 1], [0, 0, 0]],  # Z
 ]
 
+const COLORS = [
+	Color(0, 1, 1),  # I
+	Color(0, 0, 1),  # J
+	Color(1, 0.5, 0),  # L
+	Color(1, 1, 0),  # O
+	Color(0, 1, 0),  # S
+	Color(1, 0, 1),  # T
+	Color(1, 0, 0),  # Z
+]
+
 var blocks = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var tile = ALL_TILES[randi() % ALL_TILES.size()]
+	var index = randi() % ALL_TILES.size()
+	var tile = ALL_TILES[index]
+	var color = COLORS[index]
 	for r in range(tile.size()):
 		var block_row = []
 		for c in range(tile[r].size()):
 			if tile[r][c]:
 				var block = block_scene.instantiate()
+				block.set_color(color)
 				add_child(block)
 				block_row.append(block)
 			else:
