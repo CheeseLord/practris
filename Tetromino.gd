@@ -1,3 +1,4 @@
+#class_name Tetromino
 extends Node2D
 
 @export var block_scene: PackedScene
@@ -64,9 +65,14 @@ func rotate_blocks():
 	update_block_positions()
 
 func update_block_positions():
-	for r in range(blocks.size()):
-		for c in range(blocks[r].size()):
+	var dimensions = get_dimensions()
+	for r in range(dimensions.y):
+		for c in range(dimensions.x):
 			var block = blocks[r][c]
 			if block:
 				var block_size = block.get_size()
 				block.position = Vector2(c * block_size.x, r * block_size.y)
+
+# Return (num rows, num cols) for this tetromino
+func get_dimensions():
+	return Vector2i(blocks[0].size(), blocks.size())
