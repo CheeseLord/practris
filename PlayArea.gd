@@ -25,6 +25,9 @@ func _ready():
 			row.append(null)
 		blocks.append(row)
 
+	$Background.grid_num_col = width
+	$Background.grid_num_row = height
+	
 	# TODO temporary to test insert_tetromino()
 	insert_tetromino(tetromino_scene.instantiate())
 
