@@ -56,5 +56,5 @@ func insert_tetromino(new_tetromino):
 # Return the (Godot) coordinates of (the top-left corner of) the cell at the
 # given indices
 func grid_indices_to_pos(row: int, col: int) -> Vector2:
-	var my_size = $CollisionShape2D.shape.size
+	var my_size = $PlayAreaRect.shape.size
 	return Vector2(col * my_size.x / width, row * my_size.y / height)
